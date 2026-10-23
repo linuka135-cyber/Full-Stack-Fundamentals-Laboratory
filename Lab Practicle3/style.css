@@ -1,0 +1,55 @@
+:root {
+  --ink: #1f2a37;
+  --paper: #f3f6f4;
+  --accent: #0f766e;
+  --accent-dark: #0b5a54;
+  --muted: #6b7785;
+  --danger: #b42318;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+.app-nav { background: var(--ink); padding: .9rem 0; }
+.navbar-brand { color: #fff; font-weight: 700; letter-spacing: .02em; }
+.nav-date { color: #b9c4cf; font-size: .9rem; }
+
+.page-title { font-weight: 700; font-size: 2.2rem; margin-bottom: 1.25rem; }
+
+.btn-add { background: var(--accent); color: #fff; border: 0; font-weight: 600; }
+.btn-add:hover, .btn-add:focus { background: var(--accent-dark); color: #fff; }
+.form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 .2rem rgba(15,118,110,.2); }
+
+.error-msg { min-height: 1.5rem; color: var(--danger); font-size: .9rem; font-weight: 500; }
+
+.btn-filter { background: #fff; border: 1px solid #cfd8d4; color: var(--ink); }
+.btn-filter.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.counter { color: var(--muted); font-weight: 500; }
+
+.task-list .list-group-item {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .85rem 1rem; border-color: #dde5e1;
+}
+.task-list .form-check-input { width: 1.3rem; height: 1.3rem; margin: 0; cursor: pointer; }
+.form-check-input:checked { background-color: var(--accent); border-color: var(--accent); }
+.task-text { flex: 1; word-break: break-word; }
+.task-item.done .task-text { text-decoration: line-through; color: var(--muted); }
+.task-item.done { background: #eef2f0; }
+
+.btn-delete { color: var(--danger); border: 1px solid transparent; background: transparent; }
+.btn-delete:hover { border-color: var(--danger); background: #fdecea; color: var(--danger); }
+.btn-outline-clear { border: 1px solid var(--muted); color: var(--muted); }
+.btn-outline-clear:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+.empty-state { text-align: center; color: var(--muted); padding: 1.5rem 1rem; }
+
+@media (max-width: 575.98px) {
+  .page-title { font-size: 1.7rem; }
+  .input-group { flex-wrap: wrap; }
+  .input-group > .form-control, .input-group > .btn { width: 100%; flex: 1 1 100%; border-radius: .5rem !important; }
+  .input-group > .btn { margin-top: .5rem; }
+  .btn-group { width: 100%; }
+  .btn-group .btn { flex: 1; }
+}
