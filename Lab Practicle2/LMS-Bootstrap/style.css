@@ -1,0 +1,131 @@
+/* ===== Shared styles for all pages (load AFTER Bootstrap) ===== */
+:root {
+  --section-gray: #f1f3f5;
+}
+
+/* Sections: fluid padding so phones don't get huge gaps */
+.section {
+  width: 100%;
+  padding: clamp(2rem, 6vw, 5rem) 1rem;
+}
+.section-gray {
+  background-color: var(--section-gray);
+}
+.section-white {
+  background-color: #fff;
+}
+
+/* Navbar brand scales down on small screens */
+.navbar-brand {
+  margin-left: clamp(0rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* Hero text */
+.hero-text {
+  max-width: 40rem;
+  margin: 1.5rem auto 2rem;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+/* Responsive grid: 1 column (phone), 2 (tablet), 3 (desktop) */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* White cards, equal heights, buttons pinned to the bottom */
+.card-grid .card,
+.info-card {
+  background-color: #fff;
+  height: 100%;
+}
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+.card-body .btn-solid {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Two-column block that stacks on phones (About page) */
+.split {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.split img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Contact layout: stacks on phones, side by side on desktop */
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+.contact-grid .card {
+  background-color: #fff;
+  height: 100%;
+}
+.form-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Make form fields fill their container */
+.form-control {
+  width: 100%;
+}
+
+/* Page titles */
+.page-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.page-subtitle {
+  text-align: center;
+  max-width: 40rem;
+  margin: -1.5rem auto 2.5rem;
+}
